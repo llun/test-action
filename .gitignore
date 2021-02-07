@@ -1,8 +1,0 @@
-.DS_Store
-node_modules
-contents
-_site
-pages/_data
-tailwind.css
-pages/js/*
-pages/data/*.json
