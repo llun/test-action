@@ -1,4 +1,6 @@
-/*! modern-normalize v1.0.0 | MIT License | https://github.com/sindresorhus/modern-normalize */
+/*! tailwindcss v2.1.2 | MIT License | https://tailwindcss.com */
+
+/*! modern-normalize v1.1.0 | MIT License | https://github.com/sindresorhus/modern-normalize */
 
 /*
 Document
@@ -10,8 +12,8 @@ Use a better box model (opinionated).
 */
 
 *,
-*::before,
-*::after {
+::before,
+::after {
   box-sizing: border-box;
 }
 
@@ -19,10 +21,9 @@ Use a better box model (opinionated).
 Use a more readable tab size (opinionated).
 */
 
-:root {
+html {
   -moz-tab-size: 4;
-  -o-tab-size: 4;
-     tab-size: 4;
+  tab-size: 4;
 }
 
 /**
@@ -405,16 +406,9 @@ textarea {
   resize: vertical;
 }
 
-input::-moz-placeholder, textarea::-moz-placeholder {
-  color: #9ca3af;
-}
-
-input:-ms-input-placeholder, textarea:-ms-input-placeholder {
-  color: #9ca3af;
-}
-
 input::placeholder,
 textarea::placeholder {
+  opacity: 1;
   color: #9ca3af;
 }
 
@@ -500,7 +494,7 @@ object {
 
 /**
  * Constrain images and videos to the parent width and preserve
- * their instrinsic aspect ratio.
+ * their intrinsic aspect ratio.
  *
  * https://github.com/mozdevs/cssremedy/issues/14
  */
@@ -1020,27 +1014,16 @@ video {
 }
 
 .transition {
-  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
-}
-
-@-webkit-keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
 }
 
 @keyframes spin {
   to {
     transform: rotate(360deg);
-  }
-}
-
-@-webkit-keyframes ping {
-  75%, 100% {
-    transform: scale(2);
-    opacity: 0;
   }
 }
 
@@ -1051,43 +1034,21 @@ video {
   }
 }
 
-@-webkit-keyframes pulse {
-  50% {
-    opacity: .5;
-  }
-}
-
 @keyframes pulse {
   50% {
     opacity: .5;
   }
 }
 
-@-webkit-keyframes bounce {
-  0%, 100% {
-    transform: translateY(-25%);
-    -webkit-animation-timing-function: cubic-bezier(0.8,0,1,1);
-            animation-timing-function: cubic-bezier(0.8,0,1,1);
-  }
-
-  50% {
-    transform: none;
-    -webkit-animation-timing-function: cubic-bezier(0,0,0.2,1);
-            animation-timing-function: cubic-bezier(0,0,0.2,1);
-  }
-}
-
 @keyframes bounce {
   0%, 100% {
     transform: translateY(-25%);
-    -webkit-animation-timing-function: cubic-bezier(0.8,0,1,1);
-            animation-timing-function: cubic-bezier(0.8,0,1,1);
+    animation-timing-function: cubic-bezier(0.8,0,1,1);
   }
 
   50% {
     transform: none;
-    -webkit-animation-timing-function: cubic-bezier(0,0,0.2,1);
-            animation-timing-function: cubic-bezier(0,0,0.2,1);
+    animation-timing-function: cubic-bezier(0,0,0.2,1);
   }
 }
 
@@ -1138,4 +1099,4 @@ video {
 
 @media (min-width: 1536px) {
 }
-  
+    
